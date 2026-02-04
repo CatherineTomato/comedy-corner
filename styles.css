@@ -21,57 +21,43 @@ body {
 .banner {
   background: #fff;
   border-bottom: 2px solid #111;
-  padding: 18px 16px 10px;
   position: relative;
+
+  /* gives the arrow its own strip so it doesn't cut through the title */
+  padding: 34px 16px 10px;
 }
 
-/* Arrow compatable with multiple screen sizes!*/
+.header-arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.arrow-line,
+.arrow-head {
+  stroke: #111;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* keep header content above the arrow */
+.banner .logo,
+.banner .main-nav {
+  position: relative;
+  z-index: 2;
+}
 
 .logo {
-  position: relative;
   margin: 0;
   text-align: center;
   font-size: 3rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 900;
-}
-
-.header-arrow {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 110px;
-  pointer-events: none;
-}
-
-.arrow-line,
-.arrow-head {
-  stroke: #111;
-  stroke-width: 2;
-  fill: none;
-}
-@media (max-width: 900px) {
-  .header-arrow {
-    height: 80px;
-  }
-
-  .arrow-line,
-  .arrow-head {
-    stroke-width: 1.6;
-  }
-}
-@media (max-width: 600px) {
-  .header-arrow {
-    height: 55px;
-    opacity: 0.75;
-  }
-
-  .arrow-line,
-  .arrow-head {
-    stroke-width: 1.3;
-  }
 }
 
 /* Navigation */
@@ -205,14 +191,24 @@ th {
 
 /* Responsive */
 
+@media (max-width: 900px) {
+  .header-arrow {
+    height: 45px;
+  }
+
+  .arrow-line,
+  .arrow-head {
+    stroke-width: 1.3;
+  }
+
+  .banner {
+    padding-top: 30px;
+  }
+}
+
 @media (max-width: 800px) {
   .logo {
     font-size: 2.2rem;
-  }
-
-  .logo-arrow {
-    right: -20px;
-    top: -8px;
   }
 
   .layout {
@@ -227,5 +223,21 @@ th {
     width: 100%;
     border-right: none;
     border-top: 1px solid #111;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-arrow {
+    height: 34px;
+    opacity: 0.8;
+  }
+
+  .arrow-line,
+  .arrow-head {
+    stroke-width: 1.1;
+  }
+
+  .banner {
+    padding-top: 26px;
   }
 }
