@@ -22,34 +22,10 @@ body {
   background: #fff;
   border-bottom: 2px solid #111;
   position: relative;
-
-  /* gives the arrow its own strip so it doesn't cut through the title */
-  padding: 34px 16px 10px;
+  padding: 18px 16px 10px;
 }
 
-.header-arrow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 55px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.arrow-line,
-.arrow-head {
-  stroke: #111;
-  stroke-width: 1.5;
-  fill: none;
-}
-
-/* keep header content above the arrow */
-.banner .logo,
-.banner .main-nav {
-  position: relative;
-  z-index: 2;
-}
+/* Title */
 
 .logo {
   margin: 0;
@@ -58,6 +34,16 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 900;
+}
+
+/* Arrow logo image (top-right) */
+
+.header-logo {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 120px;
+  height: auto;
 }
 
 /* Navigation */
@@ -192,17 +178,8 @@ th {
 /* Responsive */
 
 @media (max-width: 900px) {
-  .header-arrow {
-    height: 45px;
-  }
-
-  .arrow-line,
-  .arrow-head {
-    stroke-width: 1.3;
-  }
-
-  .banner {
-    padding-top: 30px;
+  .header-logo {
+    width: 95px;
   }
 }
 
@@ -227,17 +204,9 @@ th {
 }
 
 @media (max-width: 600px) {
-  .header-arrow {
-    height: 34px;
-    opacity: 0.8;
-  }
-
-  .arrow-line,
-  .arrow-head {
-    stroke-width: 1.1;
-  }
-
-  .banner {
-    padding-top: 26px;
+  .header-logo {
+    width: 70px;
+    top: 10px;
+    right: 10px;
   }
 }
